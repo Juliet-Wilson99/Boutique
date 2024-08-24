@@ -1,0 +1,24 @@
+<div class="bookings-container">
+  <h2><span>Luxe Boutique - </span> Appoinments</h2>
+  <div class="calendar">
+    <label for="date">Select a Date:  </label>
+    <input class= "input" type="date" id="date" [(ngModel)]="selectedDate" (change)="loadAppoinments()">
+  </div>
+  <div *ngIf="selectedDate">
+    <h2>Bookings for {{ selectedDate | date: 'fullDate' }}</h2>
+    
+    <div *ngIf="appointments.length > 0; else noBookings">
+      <div *ngFor="let appointment of appointments" class="appointment-card">
+        <p><strong>Name:</strong> {{ appointment.name }}</p>
+        <p><strong>Gender:</strong> {{ appointment.gender }}</p>
+        <p><strong>Contact:</strong> {{ appointment.contact }}</p>
+        <p><strong>Time:</strong> {{ appointment.slot }}</p>
+      </div>
+    </div>
+  
+    <ng-template #noBookings>
+      <p>No bookings available for this date.</p>
+    </ng-template>
+  </div>
+</div>
+  

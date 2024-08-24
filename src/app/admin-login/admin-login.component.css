@@ -1,0 +1,51 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 30%;
+  margin: 5% auto;
+  padding: 30px;
+  background-color: #400553e9;
+  border-radius: 8px;
+  color: white;
+  gap:20px;
+  }
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 30px;
+  }
+  
+  div {
+    margin-bottom: 10px;
+  }
+  
+  label {
+    margin:5px;
+  }
+  
+  input {
+    width: 60%;
+    padding: 5px;
+  }
+  
+  button {
+    background-color: #e8d3f2;
+    color: rgb(40, 1, 51);
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 30px;
+  }
+  
+  button:hover {
+    background-color: #f7dff9;
+    transform: scale(1.07);
+  }
+  

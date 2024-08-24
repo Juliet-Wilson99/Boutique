@@ -1,0 +1,6 @@
+<div class="header">
+    <div class="company-name">Luxe Boutique</div>
+    <button *ngIf = "!isLoggedIn" routerLink = '/admin-login' class="admin-button"><strong>Staff Login</strong></button>
+    <button *ngIf = "isLoggedIn" routerLink = '/home' class="admin-button" (click)="toggle()"><strong>Logout</strong></button>
+  </div>
+  

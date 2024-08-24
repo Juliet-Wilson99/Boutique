@@ -1,0 +1,44 @@
+<div id="bookingSuccessPopup" class="modal" *ngIf="showSuccessPopup">
+  <div class="modal-content">
+    <span class="close" (click)="closePopup()">&times;</span>
+    <h2>Booking Successful</h2>
+    <p>Your appointment has been booked successfully!</p>
+  </div>
+</div>
+<div class="home-container">
+    <h2>Book an Appointment</h2>
+  
+    <div class="user-details">
+      <label for="name">Name: </label>
+      <input class="input" type="text" id="name" [(ngModel)]="name">
+  
+      <div class="gender-selection">
+        <label>Gender:</label>
+        <label>
+          <input type="radio" name="gender" value="M" [(ngModel)]="gender"> Male
+        </label>
+        <label>
+          <input type="radio" name="gender" value="F" [(ngModel)]="gender"> Female
+        </label>
+      </div>
+
+      <label for="ContactNum">Contact number: </label>
+      <input class="input" type="text" id="contact" [(ngModel)]="contactNum">
+    </div>
+  
+    <div class="calendar">
+      <label for="date">Select a Date: </label>
+      <input class= "input" type="date" id="date" [(ngModel)]="selectedDate" (change)="loadSlots()">
+    </div>
+  
+    <div *ngIf="selectedDate">
+    <h3>Available Slots</h3>
+    <div class="appointment-slots">
+      <div *ngFor="let slot of slots" (click)="selectSlot(slot)" [class.booked]="slot.booked" [class.disabled]="slot.booked">
+        {{ slot.time }}
+      </div>
+    </div>
+    <button (click)="bookSlot()"><strong>Book Now</strong></button>
+    </div>
+  </div>
+  
